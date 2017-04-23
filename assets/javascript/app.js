@@ -1,21 +1,21 @@
 $(document).ready(function() {
 
 
-var topics = ["Little Lolita Cosplay", "Video Game Cosplay", "Mecha Cosplay", "Attack on Titan Cosplay", "Steampunk Cosplay", "Anime Cosplay"];
-
-	for (var i = 0; i < topics.length; i++) {
-		//console.log(topics[i]);
-		
-		var cosplayBtn = $("<button class='buttons'>" + topics[i] + "</div>");
-
-		cosplayBtn.attr("data-theme", topics[i]);
-
-		$("#cosplay-btn").append(cosplayBtn);
-		//var cosplayImage = $("<img>");
-		//cosplayImage.attr("src", topics[i]);
-		};
+	var topics = [ "8 Bit Friends", "8Bit Game", "Trippy 8 Bit", "8 Bit Pizza", "Jurassic Park 8 Bit", "Unicorns 8Bit"];
 
 	
+	for (var i = 0; i < topics.length; i++) {
+				
+		var BitBtn = $("<button class='buttons'>" + topics[i] + "</div>");
+
+		BitBtn.attr("data-theme", topics[i]);
+		
+		//console.log(topics[i])
+
+		$("#bit-btns").append(BitBtn);
+		//var cosplayImage = $("<img>");
+		//cosplayImage.attr("src", topics[i]);
+	};
 
 	$("button").on("click", function(event){
 
@@ -34,32 +34,83 @@ var topics = ["Little Lolita Cosplay", "Video Game Cosplay", "Mecha Cosplay", "A
 
 				for (var c = 0; c < results.length; c++) {
 
-					if (results[c].rating !== "r" && results[c].rating !== "pg-13") {
+					//if (results[c].rating !== "r" && results[c].rating !== "pg-13") {
 					
-					var gifDiv = $("<div class='item'>");
+					var gifDiv = $("<div>");
 
 					var rating = results[c].rating;
 
 					var p = $("<p>").text("Rating:" + rating);
 
-					var gifImage = $("<img>");
+					var gifImage = $("<img class='gif'>");
 
 					gifImage.attr("src", results[c].images.fixed_height.url);
-						console.log(results[c].images.fixed_height.url)
+					
+					//console.log(results[c])
 					gifDiv.append(p);
 					gifDiv.append(gifImage);
 
-					$("#cosplays").prepend(gifDiv);
-
-
-					}
-					
+					$("#bits").prepend(gifDiv);
+					//}	
 				}
 
+			//$(".gif").data("data-state", still);
+			//console.log("data-state")
+			$("#bits").on("click", function (){
+			//console.log($(".gif").data(state))
+			//var state = $(this).attr("data-state");
+
+			$(".gif").data("data-state", "still");
+			
+			state.data(still);
+
+				if (state === "still") {
+        			$(this).attr("src", $(this).attr("data-animate"));
+        			$(this).attr("data-state", "animate");
+      			} else {
+        			$(this).attr("src", $(this).attr("data-still"));
+        			$(this).attr("data-state", "still");
+      			}	
 
 
 			});
+		});
+
 
 	});
 
+/*$("#new-bit-gif").on("click", function (event){
+ 		console.log(event);
+		event.preventDefault();
+		var newBtn = $("userbitBtn").val();
+		topics.push(newBtn);
+			
+		function pushnewBtn (event){
+			$("#bit-btns").html("");
+			for (var i = 0; i < topics.length; i++) {
+				$("#bit-btns").append("<button>"  + newBtn + "</button>");
+				};
+
+		//console.log(event);
+		pushnewBtn(event);
+
+		}	
+
+	});*/
+
+	/*function addBit (){
+		var newBtn = $("userbitBtn").val();
+		topics.push(newBtn);
+		$("bit-btns").submit();
+	}*/
+
+
+
+
+
 });
+	
+
+
+
+
