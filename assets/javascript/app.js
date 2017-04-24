@@ -32,82 +32,80 @@ $(document).ready(function() {
 
 			var results = response.data;
 
-				for (var c = 0; c < results.length; c++) {
+				for (var i = 0; i < results.length; i++) {
 
 					//if (results[c].rating !== "r" && results[c].rating !== "pg-13") {
 					
-					var gifDiv = $("<div>");
-
-					var rating = results[c].rating;
+					var gifDiv = $("<div class='img'>");
+ 
+					var rating = results[i].rating;
 
 					var p = $("<p>").text("Rating:" + rating);
 
 					var gifImage = $("<img class='gif'>");
 
-					gifImage.attr("src", results[c].images.fixed_height.url);
-					
+					var gifURL = results[i].images.fixed_height_still.url;
+
+					var animate = results[i].images.fixed_height.url;
+
+					gifImage.attr("src", gifURL);
+
+					gifImage.attr("data-state", "still");
+
+					gifImage.attr("data-animate", animate);
+
 					//console.log(results[c])
-					gifDiv.append(p);
 					gifDiv.append(gifImage);
+					gifDiv.append(p);
 
 					$("#bits").prepend(gifDiv);
 					//}	
 				}
 
-			//$(".gif").data("data-state", still);
-			//console.log("data-state")
-			$("#bits").on("click", function (){
-			//console.log($(".gif").data(state))
-			//var state = $(this).attr("data-state");
-
-			$(".gif").data("data-state", "still");
-			
-			state.data(still);
-
-				if (state === "still") {
-        			$(this).attr("src", $(this).attr("data-animate"));
-        			$(this).attr("data-state", "animate");
-      			} else {
-        			$(this).attr("src", $(this).attr("data-still"));
-        			$(this).attr("data-state", "still");
-      			}	
-
-
-			});
-		});
-
-
-	});
-
-/*$("#new-bit-gif").on("click", function (event){
- 		console.log(event);
+						//console.log("data-state")
+		$(".gif").on("click", function (event){
+		console.log(event)
 		event.preventDefault();
-		var newBtn = $("userbitBtn").val();
-		topics.push(newBtn);
-			
-		function pushnewBtn (event){
+
+		var state = $(this).attr("src");
+
+		var animate = $(this).attr("data-animate");
+						//var animate = $(this).attr("data-animate");
+						//var obj = JSON.stringify(still);
+							
+
+		$(this).attr("src", animate);
+					
+		$(this).attr("data-animate", state);
+						
+		
+		});
+		
+		$("#new-bit-gif").on("click", function (event){
+ 		
+		event.preventDefault();
+		newBtn = $("#userbitInput").val().trim();
+		topics.push(newBtn); 
+		//console.log(event)
+		/*function pushnewBtn (event){
 			$("#bit-btns").html("");
 			for (var i = 0; i < topics.length; i++) {
 				$("#bit-btns").append("<button>"  + newBtn + "</button>");
 				};
 
 		//console.log(event);
-		pushnewBtn(event);
+		pushnewBtn(event);*/
 
-		}	
+		});
 
-	});*/
+	});
+	});
 
 	/*function addBit (){
 		var newBtn = $("userbitBtn").val();
 		topics.push(newBtn);
 		$("bit-btns").submit();
 	}*/
-
-
-
-
-
 });
 	
 
