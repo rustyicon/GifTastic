@@ -1,0 +1,86 @@
+body {
+	background-image: url("../images/8bit_wallpaper.png");
+}
+h1{
+
+	text-shadow: 3px 3px grey;
+	margin: auto 0;
+	padding:15px;
+	background:#b2b72c;
+	font-family: 'Press Start 2P';
+	color: black;
+	border-style: dotted;
+}
+div {
+	padding: 15px;
+}
+#container {
+	margin: auto;
+	padding: 15px;
+	text-align: center;
+}
+#bit-btns{
+
+	background: #219188;
+	border: 15px solid #b2b72c;
+	border-style: ridge;
+	margin-bottom: 15px;
+}	
+button {
+	background-color: #4CAF50; 
+    border:groove black;
+    color: white;
+    padding: 15px ;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Press Start 2P';
+    font-size: 16px;
+}
+
+label {
+	text-shadow: 4px 4px black;
+	color:white;
+	font-family: 'Press Start 2P';
+    font-size: 20px;
+
+}
+input[type=text] {
+	height: 20px;
+	width: 25%;
+    background-color: black;
+    font-size:25px;
+    color: white;
+    padding-top: 10px;
+}
+#new-bit-gif{
+	background-color: #4CAF50; 
+    border:groove black;
+    color: white;
+    padding: 15px ;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Press Start 2P';
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+#footer {
+	overflow: auto;
+	position:absolute;
+	height: 100%;
+	width: 45%;
+	background-color: #6172d3;
+	right:350px;  
+}
+
+p {
+	color: black;
+	font-family: 'Press Start 2P';
+    font-size: 25px;
+}
+
+
+
+
+
+

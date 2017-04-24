@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-	var topics = [ "8 Bit Friends", "8Bit Game", "Trippy 8 Bit", "8 Bit Pizza", "Jurassic Park 8 Bit", "Unicorns 8Bit"];
+	var topics = [ "8 Bit Friends", "8Bit Game", "Trippy 8 Bit", "8 Bit Pizza", "Jurassic Park 8 Bit", "8Bit Unicorn"];
 
 	
 	for (var i = 0; i < topics.length; i++) {
@@ -10,6 +10,13 @@ $(document).ready(function() {
 
 		BitBtn.attr("data-theme", topics[i]);
 		
+		$("#new-bit-gif").on("click", "thisATTR", function (event){
+		event.preventDefault();
+		newBtn = $("#userbitInput").val().trim();
+		topics.push(newBtn); 
+		console.log(event)
+		
+		});
 		//console.log(topics[i])
 
 		$("#bit-btns").append(BitBtn);
@@ -79,23 +86,6 @@ $(document).ready(function() {
 		$(this).attr("data-animate", state);
 						
 		
-		});
-		
-		$("#new-bit-gif").on("click", function (event){
- 		
-		event.preventDefault();
-		newBtn = $("#userbitInput").val().trim();
-		topics.push(newBtn); 
-		//console.log(event)
-		/*function pushnewBtn (event){
-			$("#bit-btns").html("");
-			for (var i = 0; i < topics.length; i++) {
-				$("#bit-btns").append("<button>"  + newBtn + "</button>");
-				};
-
-		//console.log(event);
-		pushnewBtn(event);*/
-
 		});
 
 	});
