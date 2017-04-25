@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
+var topics = [ "8 Bit Friends", "8Bit Game", "Trippy 8 Bit", "8 Bit Pizza", "Jurassic Park 8 Bit", "8Bit Unicorn", "8Bit"];
 
-    var topics = ["8 Bit Friends", "8Bit Game", "Trippy 8 Bit", "8 Bit Pizza", "Jurassic Park 8 Bit", "8Bit Unicorn", "8 Bit Band"];
-
+	$("#userbitInput")    
 
     for (var i = 0; i < topics.length; i++) {
 
@@ -18,6 +18,9 @@ $(document).ready(function() {
     };
 
     $(document).on("click", "#new-bit-gif", function(event) {
+        
+        $("#bit-btns").empty();
+
         event.preventDefault();
         newBtn = $("#userbitInput").val().trim();
         topics.push(newBtn);
